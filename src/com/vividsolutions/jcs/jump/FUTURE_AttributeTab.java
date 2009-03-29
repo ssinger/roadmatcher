@@ -20,7 +20,7 @@ public class FUTURE_AttributeTab extends AttributeTab {
     public FUTURE_AttributeTab(InfoModel model,
             WorkbenchContext workbenchContext, TaskFrame taskFrame,
             LayerManagerProxy layerManagerProxy) {
-        super(model, workbenchContext, taskFrame, layerManagerProxy);
+        super(model, workbenchContext, taskFrame, layerManagerProxy,false);
         AttributePanel panel = (AttributePanel) FUTURE_LangUtil
                 .getPrivateField("panel", this, AttributeTab.class);
         FUTURE_LangUtil.setPrivateField("zoomToSelectedItemsPlugIn",

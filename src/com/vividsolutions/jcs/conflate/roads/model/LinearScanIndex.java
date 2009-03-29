@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.vividsolutions.jts.geom.Envelope;
+import com.vividsolutions.jts.index.ItemVisitor;
 import com.vividsolutions.jts.index.SpatialIndex;
 
 /**
@@ -52,5 +53,10 @@ public class LinearScanIndex implements SpatialIndex, Serializable {
         }
         return results;
     }
+
+	public void query(Envelope arg0, ItemVisitor arg1) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

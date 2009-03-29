@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import com.sun.corba.se.connection.GetEndPointInfoAgainException;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jump.feature.*;
 import com.vividsolutions.jump.feature.AttributeType;
