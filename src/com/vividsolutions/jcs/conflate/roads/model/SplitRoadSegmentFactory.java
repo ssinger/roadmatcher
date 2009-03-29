@@ -17,11 +17,11 @@ public class SplitRoadSegmentFactory {
 	 */
 	public static SplitRoadSegment[] create(LineString[] lineStrings,
 			SourceRoadSegment roadSegmentBeingSplit) {
-		Assert.isTrue(FUTURE_LineString.first(lineStrings[0]).equals2D(
-				FUTURE_LineString.first(roadSegmentBeingSplit.getLine())));
-		Assert.isTrue(FUTURE_LineString.last(
-				lineStrings[lineStrings.length - 1]).equals2D(
-				FUTURE_LineString.last(roadSegmentBeingSplit.getLine())));
+		//Assert.isTrue(FUTURE_LineString.first(lineStrings[0]).equals2D(
+		//		FUTURE_LineString.first(roadSegmentBeingSplit.getLine())));
+		//Assert.isTrue(FUTURE_LineString.last(
+		//		lineStrings[lineStrings.length - 1]).equals2D(
+		//		FUTURE_LineString.last(roadSegmentBeingSplit.getLine())));
 		HashSet vertices = FUTURE_CollectionUtil
 				.createHashSet(roadSegmentBeingSplit.getLine().getCoordinates());
 		SplitRoadSegment[] splitRoadSegments = new SplitRoadSegment[lineStrings.length];
@@ -67,18 +67,23 @@ public class SplitRoadSegmentFactory {
 	private static void assertContiguous(SplitRoadSegment[] splitRoadSegments) {
 		for (int i = 0; i < splitRoadSegments.length; i++) {
 			if (splitRoadSegments[i].getSiblingAtStart() != null) {
-				Assert.isTrue(FUTURE_LineString.first(
+				//SJS changed
+				boolean b=(FUTURE_LineString.first(
 						splitRoadSegments[i].getLine()).equals(
 						FUTURE_LineString.last(splitRoadSegments[i]
-								.getSiblingAtStart().getLine())),
-						"Split not contiguous");
+								.getSiblingAtStart().getLine())));
+						
+				if (!b)
+					System.err.println("Warning, Assertion failed: Split not contigious");
 			}
 			if (splitRoadSegments[i].getSiblingAtEnd() != null) {
-				Assert.isTrue(FUTURE_LineString.last(
+				boolean b=(FUTURE_LineString.last(
 						splitRoadSegments[i].getLine()).equals(
 						FUTURE_LineString.first(splitRoadSegments[i]
-								.getSiblingAtEnd().getLine())),
-						"Split not contiguous");
+								.getSiblingAtEnd().getLine())));
+
+				if (!b)
+					System.err.println("Warning, Assertion failed: Split not contigious");
 			}
 		}
 	}

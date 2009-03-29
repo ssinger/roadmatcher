@@ -1,13 +1,21 @@
 package com.vividsolutions.jcs.conflate.roads.pathmatch;
 
-import com.vividsolutions.jcs.conflate.linearpathmatch.*;
-import com.vividsolutions.jcs.conflate.roads.model.*;
-import com.vividsolutions.jcs.graph.*;
+import java.util.HashSet;
+import java.util.Iterator;
+
+import com.vividsolutions.jcs.conflate.linearpathmatch.LinearEdge;
+import com.vividsolutions.jcs.conflate.linearpathmatch.PathTracer;
+import com.vividsolutions.jcs.conflate.roads.model.RoadNetwork;
+import com.vividsolutions.jcs.conflate.roads.model.RoadNode;
+import com.vividsolutions.jcs.conflate.roads.model.RoadSegment;
+import com.vividsolutions.jcs.conflate.roads.model.SourceRoadSegment;
+import com.vividsolutions.jcs.conflate.roads.model.SourceState;
 import com.vividsolutions.jcs.geom.LineStringUtil;
-import com.vividsolutions.jts.geom.*;
+import com.vividsolutions.jcs.graph.DirectedEdge;
+import com.vividsolutions.jcs.graph.Node;
+import com.vividsolutions.jts.geom.LineString;
 import com.vividsolutions.jts.util.Assert;
 import com.vividsolutions.jump.geom.Angle;
-import java.util.Iterator;
 
 /**
  * Traces a path through a {@link RoadNetwork}
@@ -27,6 +35,7 @@ public class RoadPathTracer
 
   private boolean isFirst = true;
   private DirectedEdge currDE;
+  private HashSet visited=new HashSet();
 
   public RoadPathTracer(DirectedEdge de)
   {
@@ -91,6 +100,14 @@ public class RoadPathTracer
 
       candidate = findNearlyStraightCandidate(currDE);
     }
+    if(visited.contains(candidate)) {
+    	return null;
+    }
+    else
+    {
+    	visited.add(candidate);
+    }
+    
     currDE = candidate;
     return currDE;
   }
