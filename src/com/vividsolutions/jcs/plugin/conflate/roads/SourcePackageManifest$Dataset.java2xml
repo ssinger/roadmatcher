@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<root>
+    <element xml-name="shortName" java-name="shortName"/>
+    <element xml-name="input" java-name="inputDataset"/>
+    <element xml-name="nodeConstraints" java-name="nodeConstraintsDataset"/>
+    <element xml-name="context" java-name="contextDataset"/>
+</root>

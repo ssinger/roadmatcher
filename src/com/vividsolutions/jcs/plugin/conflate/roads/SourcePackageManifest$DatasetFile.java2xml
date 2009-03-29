@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<root>
+  <element xml-name="fileName" java-name="fileName"/>
+  <element xml-name="format" java-name="format"/>    
+</root>

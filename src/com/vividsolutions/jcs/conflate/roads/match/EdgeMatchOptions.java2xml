@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <element xml-name="distanceTolerance" java-name="distanceTolerance"/>
+  <element xml-name="lineSegmentLengthTolerance" java-name="lineSegmentLengthTolerance"/>
+  <element xml-name="lengthDifferenceTolerance" java-name="lengthDifferenceTolerance"/>
+  <element xml-name="overlapRatioTolerance" java-name="overlapRatioTolerance"/>
+  <element xml-name="overlapDifference" java-name="overlapDifference"/>
+</root>

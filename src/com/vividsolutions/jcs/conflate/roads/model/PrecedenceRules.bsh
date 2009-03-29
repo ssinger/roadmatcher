@@ -1,0 +1,25 @@
+    public SourceRoadSegment chooseReference(
+            SourceRoadSegment dra,
+            SourceRoadSegment trim) {
+        //Note that TRIM is favoured; DRA is chosen only in exceptional
+        //circumstances. [Jon Aquino 2004-03-04]
+        if (intersectingDRAPrecedenceArea(dra)
+                && ((String) dra.getFeature().getAttribute("POST_BY")).trim()
+                        .equalsIgnoreCase("gps")) { return dra; }
+        if (!intersectingDRAPrecedenceArea(dra)
+                && ((String) trim.getFeature().getAttribute("CAP_METHOD"))
+                        .trim().equalsIgnoreCase("differentialgps")) { return dra; }
+        return trim;
+    }
+
+    private boolean intersectingDRAPrecedenceArea(SourceRoadSegment dra) {
+        for (Iterator i = dra.getNetwork().getSession()
+                .getDRAPrecedenceAreaFeatureCollection().query(
+                        dra.getApparentLine().getEnvelopeInternal()).iterator(); i
+                .hasNext();) {
+            Feature draPrecedenceArea = (Feature) i.next();
+            if (draPrecedenceArea.getGeometry().intersects(
+                    dra.getApparentLine())) { return true; }
+        }
+        return false;
+    }

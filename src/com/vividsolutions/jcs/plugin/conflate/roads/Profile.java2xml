@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+  <element xml-name="locked" java-name="locked"/>
+  <element xml-name="dataset" java-name="dataset"/>
+  <element xml-name="autoMatch">
+    <element xml-name="minimumLineSegmentLength" java-name="minimumLineSegmentLength"/>
+    <element xml-name="nearnessTolerance" java-name="nearnessTolerance"/>    
+    <element xml-name="findStandaloneRoads">
+      <element xml-name="enabled" java-name="findStandaloneRoadsEnabled"/>
+      <element xml-name="minimumDistance" java-name="findStandaloneRoadsMinimumDistance"/>    
+    </element>
+    <element xml-name="findMatchedRoads">
+      <element xml-name="enabled" java-name="findMatchedRoadsEnabled"/>
+      <element xml-name="maximumDistance" java-name="findMatchedRoadsMaximumDistance"/>    
+    </element>
+  </element>
+  <element xml-name="autoAdjust" java-name="autoAdjustOptions"/>
+  <element xml-name="vertexTransfer">  
+      <element xml-name="enabled" java-name="transferringVertices"/>
+      <element xml-name="algorithm" java-name="vertexTransferOpClass"/>
+  </element>
+  <element xml-name="precedenceRuleEngine" java-name="precedenceRuleEngine"/>
+  <element xml-name="issueLog">
+    <element xml-name="description" java-name="issueLogDescription"/>
+  </element>
+  <element xml-name="segmentComments">
+    <attribute xml-name="editable" java-name="segmentCommentsEditable"/>
+    <element xml-name="segmentComment" java-name="segmentComment"/>
+  </element>
+  <element xml-name="onSessionLoad" java-name="onSessionLoadScript"/>  
+</root>

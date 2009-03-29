@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<root>
+  <element xml-name="shortName" java-name="shortName"/>
+  <element xml-name="adjustmentConstraint" java-name="adjustmentConstraint"/>
+  <element xml-name="resultAttributes" java-name="resultAttributes"/>
+  <element xml-name="vertexTransferFrom" java-name="transferringVertices"/>  
+</root>

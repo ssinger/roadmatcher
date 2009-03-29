@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<root>
+  <element xml-name="edgeMatchEnabled" java-name="edgeMatchEnabled"/>
+  <element xml-name="edgeMatchOptions" java-name="edgeMatchOptions"/>
+  <element xml-name="standaloneEnabled" java-name="standaloneEnabled"/>
+  <element xml-name="standaloneOptions" java-name="standaloneOptions"/>
+</root>

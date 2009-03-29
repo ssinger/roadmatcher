@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <element xml-name="datasetName" java-name="datasetName"/>  
+  <element xml-name="maximumAdjustmentSize" java-name="maximumAdjustmentSize"/>
+  <element xml-name="maximumSegmentAngleDelta" java-name="maximumSegmentAngleDelta"/>
+  <element xml-name="minimumIncidenceAngle" java-name="minimumIncidenceAngle"/>
+  <element xml-name="segmentAdjustmentLength" java-name="segmentAdjustmentLength"/>  
+  <element xml-name="methodClass" java-name="methodClass"/>  
+  <element xml-name="shiftingSegmentsWithOneConnectedEnd" java-name="shiftingSegmentsWithOneConnectedEnd"/>    
+</root>
